@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+
+import "./App.css";
+import Dashboard from "./components/Dashboard";
+import Paginate from "./components/Paginate";
+import Tailwind from "./components/Tailwind";
+import Todo from "./components/Todo";
+import Projects from "./components/Project";
+import Report from "./pages/Report";
+
+function About() {
+  return <p>hello</p>;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/todo/:id" element={<Todo />} />
+        <Route path="/pagination" element={<Paginate />} />
+        <Route path="/" element={<Dashboard />}>
+          <Route path="home" element={<Tailwind />} />
+          <Route path="team" element={<About />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="calendar" element={<Tailwind />} />
+          <Route path="documents" element={<Projects />} />
+          <Route path="reports" element={<Report />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

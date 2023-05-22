@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.todos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.todo {
+  max-width: 400px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.todo span:first-child {
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+.text-center {
+  display: block;
+  text-align: center;
+}
